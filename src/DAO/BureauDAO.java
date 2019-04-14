@@ -89,11 +89,13 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
     @Override//modification des informations d'un élément dont indique le sigle
     public Bureau update(Bureau obj) throws SQLException {
         Bureau a = null;
-        String request = "update PRO_BUREAU set DESCRIPTION=?,TEL=? where SIGLE=?";
+        //String request = "update PRO_BUREAU set DESCRIPTION=?,TEL=? where SIGLE=?";
+        String request = "update PRO_BUREAU set DESCRIPTION=?,TEL=?, SIGLE=? where idbur =?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(request)) {
             pstm.setString(1, obj.getDescription());
             pstm.setString(2, obj.getTel());
             pstm.setString(3, obj.getSigle());
+            pstm.setInt(4, obj.getIdbur());
             int n = pstm.executeUpdate();
             if (n == 0) {
                 throw new SQLException("\nAucun bureau n'a été mit à jour");
@@ -152,8 +154,9 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
                 }
             }
         } catch (SQLException e) {
-            System.out.println("Erreur lors de la lecture: " + e);
-            return null;
+            throw e;
+           // System.out.println("Erreur lors de la lecture: " + e);
+           // return null;
         }
     }
 

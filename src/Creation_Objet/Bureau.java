@@ -5,6 +5,8 @@
  */
 package Creation_Objet;
 
+import java.util.Objects;
+
 /**
  *
  * @author Jules
@@ -15,6 +17,35 @@ public class Bureau {
     protected String sigle;
     protected String tel;
     protected String description;
+
+    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Bureau other = (Bureau) obj;
+        if (this.idbur != other.idbur) {
+            return false;
+        }
+        if (!Objects.equals(this.sigle, other.sigle)) {
+            return false;
+        }
+        if (!Objects.equals(this.tel, other.tel)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        return true;
+    }
 
     public Bureau() {
     }
