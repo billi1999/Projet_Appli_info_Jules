@@ -43,139 +43,54 @@ public class gestionBureau extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        idbur_gest = new javax.swing.JLabel();
-        sigle_gest = new javax.swing.JLabel();
-        tel_gest = new javax.swing.JLabel();
-        desc_gest = new javax.swing.JLabel();
-        idbur_form = new javax.swing.JTextField();
-        sigle_form = new javax.swing.JTextField();
-        tel_form = new javax.swing.JTextField();
-        desc_form = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        creation_bureau_jpanel = new projet.swing.Creation_bureau_jpanel();
+        recherche_exacte_bureau_jpanel = new projet.swing.Recherche_exacte_bureau_jpanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu_del = new javax.swing.JMenuItem();
-        jMenu_rech_ex = new javax.swing.JMenuItem();
-        jMenu_rech_par = new javax.swing.JMenuItem();
+        menuBureau = new javax.swing.JMenu();
+        itemCreateBureau = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.CardLayout());
+        getContentPane().add(creation_bureau_jpanel, "cardCreateBureau");
+        getContentPane().add(recherche_exacte_bureau_jpanel, "cardRechExactBureau");
 
-        idbur_gest.setText("idbur");
+        menuBureau.setText("Bureau");
 
-        sigle_gest.setText("sigle");
-
-        tel_gest.setText("tel");
-
-        desc_gest.setText("description");
-
-        jButton1.setText("création");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(desc_gest)
-                            .addComponent(tel_gest)
-                            .addComponent(sigle_gest)
-                            .addComponent(idbur_gest))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(idbur_form, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(sigle_form)
-                            .addComponent(tel_form)
-                            .addComponent(desc_form))))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idbur_gest)
-                    .addComponent(idbur_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sigle_gest)
-                    .addComponent(sigle_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tel_gest)
-                    .addComponent(tel_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(desc_gest)
-                    .addComponent(desc_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(77, 77, 77))
-        );
-
-        jMenu1.setText("Bureau");
-
-        jMenu_del.setText("supprimer bureau");
-        jMenu_del.addActionListener(new java.awt.event.ActionListener() {
+        itemCreateBureau.setText("Creer bureau");
+        itemCreateBureau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_delActionPerformed(evt);
+                itemCreateBureauActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenu_del);
+        menuBureau.add(itemCreateBureau);
 
-        jMenu_rech_ex.setText("recherche exacte bureau");
-        jMenu_rech_ex.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setText("Recherche Exacte");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_rech_exActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenu_rech_ex);
+        menuBureau.add(jMenuItem1);
 
-        jMenu_rech_par.setText("recherche partielle bureau");
-        jMenu_rech_par.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_rech_parActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenu_rech_par);
+        jMenuItem2.setText("jMenuItem2");
+        menuBureau.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menuBureau);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 59, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu_rech_exActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_rech_exActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu_rech_exActionPerformed
+    private void itemCreateBureauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCreateBureauActionPerformed
+        cardl.show(this.getContentPane(), "cardCreateBureau");
+    }//GEN-LAST:event_itemCreateBureauActionPerformed
 
-    private void jMenu_delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_delActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu_delActionPerformed
-
-    private void jMenu_rech_parActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_rech_parActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu_rech_parActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       cardl.show(this.getContentPane(), "cardRechExactBureau");
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,20 +128,12 @@ public class gestionBureau extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField desc_form;
-    private javax.swing.JLabel desc_gest;
-    private javax.swing.JTextField idbur_form;
-    private javax.swing.JLabel idbur_gest;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JMenu jMenu1;
+    private projet.swing.Creation_bureau_jpanel creation_bureau_jpanel;
+    private javax.swing.JMenuItem itemCreateBureau;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenu_del;
-    private javax.swing.JMenuItem jMenu_rech_ex;
-    private javax.swing.JMenuItem jMenu_rech_par;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField sigle_form;
-    private javax.swing.JLabel sigle_gest;
-    private javax.swing.JTextField tel_form;
-    private javax.swing.JLabel tel_gest;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenu menuBureau;
+    private projet.swing.Recherche_exacte_bureau_jpanel recherche_exacte_bureau_jpanel;
     // End of variables declaration//GEN-END:variables
 }
