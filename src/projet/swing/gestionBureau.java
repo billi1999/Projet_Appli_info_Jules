@@ -45,6 +45,7 @@ public class gestionBureau extends javax.swing.JFrame {
 
         creation_bureau_jpanel = new projet.swing.Creation_bureau_jpanel();
         recherche_exacte_bureau_jpanel = new projet.swing.Recherche_exacte_bureau_jpanel();
+        recherche_partielle_bureau_jpanel = new projet.swing.Recherche_partielle_bureau_jpanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuBureau = new javax.swing.JMenu();
         itemCreateBureau = new javax.swing.JMenuItem();
@@ -55,6 +56,7 @@ public class gestionBureau extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.CardLayout());
         getContentPane().add(creation_bureau_jpanel, "cardCreateBureau");
         getContentPane().add(recherche_exacte_bureau_jpanel, "cardRechExactBureau");
+        getContentPane().add(recherche_partielle_bureau_jpanel, "cardRechPartBureau");
 
         menuBureau.setText("Bureau");
 
@@ -74,7 +76,12 @@ public class gestionBureau extends javax.swing.JFrame {
         });
         menuBureau.add(jMenuItem1);
 
-        jMenuItem2.setText("jMenuItem2");
+        jMenuItem2.setText("Recherche partielle");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         menuBureau.add(jMenuItem2);
 
         jMenuBar1.add(menuBureau);
@@ -91,6 +98,10 @@ public class gestionBureau extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
        cardl.show(this.getContentPane(), "cardRechExactBureau");
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       cardl.show(this.getContentPane(),"cardRechPartBureau");
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,5 +146,6 @@ public class gestionBureau extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu menuBureau;
     private projet.swing.Recherche_exacte_bureau_jpanel recherche_exacte_bureau_jpanel;
+    private projet.swing.Recherche_partielle_bureau_jpanel recherche_partielle_bureau_jpanel;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,7 +1,7 @@
 package DAO;
 
 import java.sql.*;
-import java.time.LocalDate;
+
 import java.util.*;
 import Creation_Objet.Bureau;
 
@@ -69,7 +69,7 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
                     obj.setIdbur(idbur);
                     return read(idbur);
                 } else {
-                    throw new SQLException("Impossible de creer l'objet avec sigle");
+                    throw new SQLException("Impossible de creer l'objet avec l'idbur");
                 }
             } catch (SQLException e) {
                 System.out.println("Problème creation bureau: " + e);
@@ -155,8 +155,8 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
             }
         } catch (SQLException e) {
             throw e;
-           // System.out.println("Erreur lors de la lecture: " + e);
-           // return null;
+             //System.out.println("Erreur lors de la lecture: " + e);
+             //return null;
         }
     }
 

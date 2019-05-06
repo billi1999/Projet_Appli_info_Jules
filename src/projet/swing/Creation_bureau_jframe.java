@@ -31,7 +31,7 @@ public class Creation_bureau_jframe extends javax.swing.JFrame {
         }
         BureauDAO burDAO=new BureauDAO();
         burDAO.setConnection(dbConnect);
-        creabur.setBureauDAO(burDAO);
+        creation_bureau_jpanel1.setBureauDAO(burDAO);
         
         
         
@@ -47,139 +47,29 @@ public class Creation_bureau_jframe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        sigle_form_text = new javax.swing.JLabel();
-        tel_form_text = new javax.swing.JLabel();
-        desc_form_text = new javax.swing.JLabel();
-        sigle_form = new javax.swing.JTextField();
-        tel_form = new javax.swing.JTextField();
-        desc_form = new javax.swing.JTextField();
-        idbur_form_text = new javax.swing.JLabel();
-        idbur_form = new javax.swing.JTextField();
-        Titre_crea_bur = new javax.swing.JLabel();
-        create_bur = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        creation_bureau_jpanel1 = new projet.swing.Creation_bureau_jpanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        sigle_form_text.setText("Sigle :");
-
-        tel_form_text.setText("Tel :");
-
-        desc_form_text.setText("Description :");
-
-        sigle_form.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
-
-        desc_form.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                desc_formActionPerformed(evt);
-            }
-        });
-
-        idbur_form_text.setText("idbur :");
-
-        idbur_form.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idbur_formActionPerformed(evt);
-            }
-        });
-
-        Titre_crea_bur.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Titre_crea_bur.setText("Création Bureau");
-
-        create_bur.setText("créer");
-        create_bur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                create_burActionPerformed(evt);
-            }
-        });
-
-        jMenu1.setText("Créer");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Supprimer");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("recherche exacte");
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("recherche partielle");
-        jMenuBar1.add(jMenu4);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(desc_form_text)
-                            .addComponent(idbur_form_text, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tel_form_text)
-                                .addComponent(sigle_form_text)))
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(idbur_form, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(sigle_form)
-                            .addComponent(tel_form)
-                            .addComponent(desc_form)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(Titre_crea_bur, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(104, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(create_bur)
-                .addGap(37, 37, 37))
+                .addGap(0, 21, Short.MAX_VALUE)
+                .addComponent(creation_bureau_jpanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Titre_crea_bur, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idbur_form_text)
-                    .addComponent(idbur_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sigle_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sigle_form_text))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tel_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tel_form_text))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(desc_form_text)
-                    .addComponent(desc_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addComponent(create_bur)
-                .addGap(23, 23, 23))
+                .addGap(0, 24, Short.MAX_VALUE)
+                .addComponent(creation_bureau_jpanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void idbur_formActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idbur_formActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idbur_formActionPerformed
-
-    private void desc_formActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desc_formActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_desc_formActionPerformed
-
-    private void create_burActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_burActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_create_burActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,22 +108,8 @@ public class Creation_bureau_jframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Titre_crea_bur;
-    private javax.swing.JButton create_bur;
-    private javax.swing.JTextField desc_form;
-    private javax.swing.JLabel desc_form_text;
-    private javax.swing.JTextField idbur_form;
-    private javax.swing.JLabel idbur_form_text;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JTextField sigle_form;
-    private javax.swing.JLabel sigle_form_text;
-    private javax.swing.JTextField tel_form;
-    private javax.swing.JLabel tel_form_text;
+    private projet.swing.Creation_bureau_jpanel creation_bureau_jpanel1;
     // End of variables declaration//GEN-END:variables
 
-    private projet.swing.Creation_bureau_jpanel creabur;
+    
 }
