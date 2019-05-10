@@ -58,6 +58,7 @@ public class EmployeDAO extends DAO<Employe> {
             pstm2.setString(1, obj.getMatricule());
             pstm2.setString(2, obj.getNom());
             pstm2.setString(3, obj.getPrenom());
+            pstm2.setInt(4, obj.getIdbur());
             try (ResultSet rs = pstm2.executeQuery()) {
                 if (rs.next()) {
                     int idemp = rs.getInt(1);
@@ -67,8 +68,8 @@ public class EmployeDAO extends DAO<Employe> {
                     throw new SQLException("Impossible de de lire l'idemp");
                 }
             } catch (SQLException e) {
-                System.out.println("Impossible d'executer la query (create emp)");
-                return null;
+                System.out.println("Impossible d'executer la query (create emp) :"+e);
+                return obj;
             }
 
         }
@@ -77,7 +78,7 @@ public class EmployeDAO extends DAO<Employe> {
 
     @Override
     public Employe update(Employe obj) throws SQLException {
-        String request = "update PRO_EMP set MATRICULE=?,NOM=?,PRENOM=?,IDBUR=?";
+        String request = "update PRO_EMPLOYE set MATRICULE=?,NOM=?,PRENOM=?,IDBUR=?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(request)) {
             pstm.setString(1, obj.getMatricule());
             pstm.setString(2, obj.getNom());
