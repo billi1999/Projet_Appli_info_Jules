@@ -29,27 +29,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="426" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                          <Component id="desc_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="tel_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="sigle_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="idbur_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="desc_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tel_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="sigle_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="idbur_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="matricule_rech" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="idemp_rech" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nom_rech" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="desc_rech" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="sigle_rech" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="idbur_rech" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tel_rech" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="idbur_rech" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="pre_rech" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -62,29 +61,37 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="idbur_rech" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="idbur_rech_text" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="idbur_rech_text" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="idemp_rech" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="sigle_rech_text" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sigle_rech" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="sigle_rech_text" min="-2" max="-2" attributes="0"/>
+                  <Component id="matricule_rech" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="tel_rech" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tel_rech_text" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="tel_rech_text" min="-2" max="-2" attributes="0"/>
+                  <Component id="nom_rech" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="desc_rech_text" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="desc_rech" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="pre_rech" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
-              <EmptySpace pref="73" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="idbur_rech" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bt_maj" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt_del" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -97,25 +104,25 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="sigle_rech_text">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sigle :"/>
+        <Property name="text" type="java.lang.String" value="matricule :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="idbur_rech_text">
       <Properties>
-        <Property name="text" type="java.lang.String" value="idbur :"/>
+        <Property name="text" type="java.lang.String" value="idemp :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="tel_rech_text">
       <Properties>
-        <Property name="text" type="java.lang.String" value="tel :"/>
+        <Property name="text" type="java.lang.String" value="nom :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="desc_rech_text">
       <Properties>
-        <Property name="text" type="java.lang.String" value="description"/>
+        <Property name="text" type="java.lang.String" value="prenom :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="idbur_rech">
+    <Component class="javax.swing.JTextField" name="idemp_rech">
       <Properties>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[50, 20]"/>
@@ -125,10 +132,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idbur_rechActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idemp_rechActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tel_rech">
+    <Component class="javax.swing.JTextField" name="nom_rech">
       <Properties>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[50, 20]"/>
@@ -138,7 +145,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sigle_rech">
+    <Component class="javax.swing.JTextField" name="matricule_rech">
       <Properties>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[50, 20]"/>
@@ -148,7 +155,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="desc_rech">
+    <Component class="javax.swing.JTextField" name="pre_rech">
       <Properties>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[50, 20]"/>
@@ -191,59 +198,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_delActionPerformed"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
-          <Properties>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="5" rowCount="4">
-                <Column editable="true" title="idemp" type="java.lang.Integer"/>
-                <Column editable="true" title="matricule" type="java.lang.String"/>
-                <Column editable="true" title="nom" type="java.lang.String"/>
-                <Column editable="true" title="pr&#xe9;nom" type="java.lang.String"/>
-                <Column editable="true" title="idbur" type="java.lang.Integer"/>
-              </Table>
-            </Property>
-            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-              <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-              </TableColumnModel>
-            </Property>
-            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-            </Property>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="idbur :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="idbur_rech">
+    </Component>
   </SubComponents>
 </Form>

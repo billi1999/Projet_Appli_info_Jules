@@ -144,7 +144,7 @@ public class Creation_bureau_jpanel extends javax.swing.JPanel {
 
     private void create_burActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_burActionPerformed
 try{
-            //int idbur=Integer.parseInt(idbur_form1.getText());
+            //int idbur=Integer.parseInt(idbur_form.getText());
             String sigle=sigle_form.getText();
             String tel=tel_form.getText();
             String desc=desc_form.getText();
@@ -154,7 +154,8 @@ try{
             JOptionPane.showMessageDialog(this,"bureau créé","succès",JOptionPane.INFORMATION_MESSAGE);
 
         }catch(Exception e){
-                    JOptionPane.showMessageDialog(this,e.getMessage(),"ERREUR",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this,e.getMessage(),"ERREUR DANS LA CREATION BUREAU",JOptionPane.ERROR_MESSAGE);
+
 }    }//GEN-LAST:event_create_burActionPerformed
 
 
