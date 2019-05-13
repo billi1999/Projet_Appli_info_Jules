@@ -24,6 +24,7 @@ public class Projet_Jules {
     Connection dbConnect = DBConnection.getConnection();
 
     public void menuDebut() throws SQLException {
+
         String rep = "";
         int choix;
         if (dbConnect == null) {
@@ -63,10 +64,12 @@ public class Projet_Jules {
 
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public boolean verifier_chaine(String chaine, String regexp) {
         return chaine.matches(regexp);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public void menuBureau() throws SQLException {
         String rep = "";
         int choix;
@@ -122,7 +125,7 @@ public class Projet_Jules {
             case 2:
                 MenuRechercherIdemp();
                 break;
-               
+
             case 3:
                 modifierEmploye();
                 break;
@@ -164,14 +167,15 @@ public class Projet_Jules {
         String pre = sc.nextLine();
         System.out.println("Idbur :");
         int idbur = sc.nextInt();
-        emp = new Employe(0,matr,nom,pre,idbur);
+        sc.skip("\n");
+        emp = new Employe(0, matr, nom, pre, idbur);
         try {
             emp = EmployeDAO.create(emp);
             System.out.println("\n\tLa valeur de idemp :" + emp.getIdemp() + ""
-                    + "Matricule :" + emp.getMatricule() + ""
-                    + "Nom :" + emp.getNom() + ""
-                    + "Prenom :" + emp.getPrenom() + ""
-                    + "idbur" + emp.getIdbur());
+                    + "\nMatricule :" + emp.getMatricule() + ""
+                    + "\nNom :" + emp.getNom() + ""
+                    + "\nPrenom :" + emp.getPrenom() + ""
+                    + "\nidbur" + emp.getIdbur());
 
         } catch (SQLException e) {
             System.out.println("Erreur dans la création (creationEmploye) :" + e);
@@ -218,7 +222,9 @@ public class Projet_Jules {
         System.out.print("\nEntrer votre choix :"
                 + "\n\t1.Modifier le bureau"
                 + "\n\t2.Supprimer le bureau"
-                + "\n\t3.Retourner au menu");
+                + "\n\t3.afficher tout les employés de ce bureau"
+                + "\n\t4.Retourner au menu");
+
         choix = sc.nextInt();
         sc.skip("\n");
 
@@ -233,6 +239,10 @@ public class Projet_Jules {
                 deleteBur();
                 break;
             case 3:
+                rechEmpBur(bur.getIdbur());
+
+                break;
+            case 4:
                 break;
         }
 
@@ -240,20 +250,24 @@ public class Projet_Jules {
 ////////////////////////////////////////////////////////////////////////////
 
     public void MenuRechercherIdemp() throws SQLException {
+
         int rep;
         System.out.println("Entrer l'idemp que vous recherchez :");
         int idemp = sc.nextInt();
+        sc.skip("\n");
         try {
+
             emp = EmployeDAO.read(idemp);
+            System.out.println("\nEmployé retrouvé !\n\tLa valeur de matricule :" + emp.getMatricule()
+                    + "\n\tNom :" + emp.getNom()
+                    + "\n\tPrenom :" + emp.getPrenom()
+                    + "\n\tIdbur :" + emp.getIdbur());
+
         } catch (SQLException e) {
             System.out.println("Impossible de trouver l'idemp (MenuRechercherIdemp)" + e);
 
         }
 
-        System.out.println("\nEmployé retrouvé !\n\tLa valeur de matricule :" + emp.getMatricule()
-                + "Nom :" + emp.getNom()
-                + "Prenom :" + emp.getPrenom()
-                + "Idbur :" + emp.getIdbur());
         int choix;
         System.out.println("\nEntrer votre choix :"
                 + "\n\t1.Modifier le client"
@@ -266,7 +280,7 @@ public class Projet_Jules {
                 modifierEmploye();
                 break;
             case 2:
-                deleteBur();
+                deleteEmp();
                 break;
             case 3:
                 break;
@@ -278,21 +292,29 @@ public class Projet_Jules {
     public void deleteBur() throws SQLException {
         try {
             BureauDAO.delete(bur);
+            bur = null;
         } catch (SQLException e) {
             System.out.println("\nerreur de suppression :" + e.getMessage());
+
         }
         menuDebut();
     }
 ////////////////////////////////////////////////////////////////////////////
-    public void deleteEmp() throws SQLException{
-        try{
+
+    public void deleteEmp() throws SQLException {
+        try {
             EmployeDAO.delete(emp);
-        }catch(SQLException e){
-             System.out.println("\nerreur de suppression :" + e.getMessage());
+            emp = null;
+
+        } catch (SQLException e) {
+            System.out.println("\nerreur de suppression :" + e.getMessage());
+
         }
+
         menuDebut();
     }
 ////////////////////////////////////////////////////////////////////////////
+
     public void modifierBureau() throws SQLException {
         int choix;
         do {
@@ -337,19 +359,19 @@ public class Projet_Jules {
             switch (choix) {
                 case 1:
                     System.out.println("Entrer le matricule :");
-                    String mat=sc.nextLine();
+                    String mat = sc.nextLine();
                     emp.setMatricule(mat);
                     EmployeDAO.update(emp);
                     break;
                 case 2:
                     System.out.println("Entrer le nom :");
-                    String nom=sc.nextLine();
+                    String nom = sc.nextLine();
                     emp.setNom(nom);
                     EmployeDAO.update(emp);
                     break;
                 case 3:
                     System.out.println("Entrer le prenom :");
-                    String pre=sc.nextLine();
+                    String pre = sc.nextLine();
                     emp.setNom(pre);
                     EmployeDAO.update(emp);
                     break;
@@ -360,6 +382,41 @@ public class Projet_Jules {
 
         } while (choix != 4);
     }
+
+    public void rechercherDesce() {
+        System.out.println("Cherchez un bureau sur base de la description :");
+
+        String desc = sc.nextLine();
+        try {
+            List<Bureau> liste = BureauDAO.rechDescription(desc);
+            for (Bureau k : liste) {
+                System.out.println("Idbur :" + k.getIdbur() + ""
+                        + "\tSigle :" + k.getSigle() + ""
+                        + "\tTel :" + k.getTel() + ""
+                        + "\tDescription :"
+                        + k.getDescription());
+            }
+        } catch (SQLException e) {
+            System.out.println("erreur (rechercherDesc)" + e);
+        }
+    }
+
+    private void rechEmpBur(int idbur) {
+        /*System.out.println("Entrer le bureau dont vous voulez les emp :");
+        int idburrech = sc.nextInt();*/
+        try {
+            List<Employe> listeEmp = BureauDAO.rechEmploye(idbur);
+            for (Employe e : listeEmp) {
+                System.out.println("\nidemp :" + e.getIdemp()
+                        + "\n\tMatricule :" + e.getMatricule()
+                        + "\n\tNom :" + e.getNom()
+                        + "\n\tPrenom :" + e.getPrenom()
+                        + "\n\tidbur :" + idbur);
+            }
+        } catch (SQLException e) {
+            System.out.println("erreur (rechEmpBur)" + e);
+        }
+    }
 ////////////////////////////////////////////////////////////////////////////
 
     public static void main(String[] args) throws SQLException {
@@ -367,4 +424,5 @@ public class Projet_Jules {
         projet.menuDebut();
 
     }
+
 }
