@@ -4,6 +4,7 @@ import java.sql.*;
 
 import java.util.*;
 import Creation_Objet.Bureau;
+import Creation_Objet.Employe;
 
 public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
 
@@ -155,8 +156,8 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
             }
         } catch (SQLException e) {
             throw e;
-             //System.out.println("Erreur lors de la lecture: " + e);
-             //return null;
+            //System.out.println("Erreur lors de la lecture: " + e);
+            //return null;
         }
     }
 
@@ -193,6 +194,34 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
                     throw new SQLException("Bureau introuvable");
                 } else {
                     return listeBureau;
+                }
+            }
+        }
+
+    }
+
+    public List<Employe> rechEmploye(int idbur) throws SQLException {
+        List<Employe> rechEmp = new ArrayList<>();
+        String request = "select * from pro_employe where idbur=?";
+
+        try (PreparedStatement pstm = dbConnect.prepareStatement(request)) {
+            pstm.setInt(1, idbur);
+            try (ResultSet rs = pstm.executeQuery()) {
+                boolean found = false;
+                while (rs.next()) {
+                    found = true;
+                    int idemp = rs.getInt("idemp");
+                    String mat = rs.getString("matricule");
+                    String nom = rs.getString("nom");
+                    String prenom = rs.getString("prenom");
+                    int idburrech = rs.getInt("idbur");
+                    rechEmp.add(new Employe(idemp, mat, nom, prenom, idburrech));
+                }
+                if (!found) {
+                    throw new SQLException("Problème dans ma recherche des employé");
+
+                } else {
+                    return rechEmp;
                 }
             }
         }
