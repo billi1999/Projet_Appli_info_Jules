@@ -78,12 +78,14 @@ public class EmployeDAO extends DAO<Employe> {
 
     @Override
     public Employe update(Employe obj) throws SQLException {
-        String request = "update PRO_EMPLOYE set MATRICULE=?,NOM=?,PRENOM=?,IDBUR=?";
+        String request = "update PRO_EMPLOYE set MATRICULE=?,NOM=?,PRENOM=?,IDBUR=? where idemp=?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(request)) {
             pstm.setString(1, obj.getMatricule());
             pstm.setString(2, obj.getNom());
             pstm.setString(3, obj.getPrenom());
             pstm.setInt(4, obj.getIdbur());
+            pstm.setInt(5,obj.getIdemp());
+                    
             int n = pstm.executeUpdate();
             //return null;
             if (n == 0) {

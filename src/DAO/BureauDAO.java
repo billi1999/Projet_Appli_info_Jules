@@ -4,7 +4,8 @@ import java.sql.*;
 
 import java.util.*;
 import Creation_Objet.Bureau;
-import Creation_Objet.Employe;
+/*import Creation_Objet.Employe;*/
+import Creation_Objet.VueBureauEmploye;
 
 public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
 
@@ -89,7 +90,7 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
      */
     @Override//modification des informations d'un élément dont indique le sigle
     public Bureau update(Bureau obj) throws SQLException {
-        Bureau a = null;
+        //Bureau a = null;
         //String request = "update PRO_BUREAU set DESCRIPTION=?,TEL=? where SIGLE=?";
         String request = "update PRO_BUREAU set DESCRIPTION=?,TEL=?, SIGLE=? where idbur =?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(request)) {
@@ -200,9 +201,9 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
 
     }
 
-    public List<Employe> rechEmploye(int idbur) throws SQLException {
-        List<Employe> rechEmp = new ArrayList<>();
-        String request = "select * from pro_employe where idbur=?";
+    public List<VueBureauEmploye> rechEmploye(int idbur) throws SQLException {
+        List<VueBureauEmploye> rechEmp = new ArrayList<>();
+        String request = "select * from vue_emp_bur where idbur=?";
 
         try (PreparedStatement pstm = dbConnect.prepareStatement(request)) {
             pstm.setInt(1, idbur);
@@ -215,10 +216,10 @@ public class BureauDAO extends DAO<Bureau> {//réimplémenter les méthodes
                     String nom = rs.getString("nom");
                     String prenom = rs.getString("prenom");
                     int idburrech = rs.getInt("idbur");
-                    rechEmp.add(new Employe(idemp, mat, nom, prenom, idburrech));
+                    rechEmp.add(new VueBureauEmploye(idemp, mat, nom, prenom, idburrech));
                 }
                 if (!found) {
-                    throw new SQLException("Problème dans ma recherche des employé");
+                    throw new SQLException("Problème dans la recherche des employé");
 
                 } else {
                     return rechEmp;
