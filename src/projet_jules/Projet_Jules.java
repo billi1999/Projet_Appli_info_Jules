@@ -5,6 +5,7 @@ import myconnections.DBConnection;
 import java.util.*;
 import Creation_Objet.Bureau;
 import Creation_Objet.Employe;
+import Creation_Objet.VueBureauEmploye;
 import DAO.BureauDAO;
 import DAO.EmployeDAO;
 
@@ -405,8 +406,8 @@ public class Projet_Jules {
         /*System.out.println("Entrer le bureau dont vous voulez les emp :");
         int idburrech = sc.nextInt();*/
         try {
-            List<Employe> listeEmp = BureauDAO.rechEmploye(idbur);
-            for (Employe e : listeEmp) {
+            List<VueBureauEmploye> listeEmp = BureauDAO.rechEmploye(idbur);
+            for (VueBureauEmploye e : listeEmp) {
                 System.out.println("\nidemp :" + e.getIdemp()
                         + "\n\tMatricule :" + e.getMatricule()
                         + "\n\tNom :" + e.getNom()
