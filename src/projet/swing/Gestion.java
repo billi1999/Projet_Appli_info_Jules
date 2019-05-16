@@ -30,6 +30,7 @@ public class Gestion extends javax.swing.JFrame {
             System.out.println("connection invalide");
             JOptionPane.showMessageDialog(this,"connexion invalide","ERREUR",JOptionPane.ERROR_MESSAGE);
     }
+    
     BureauDAO burDAO=new BureauDAO();
     burDAO.setConnection(dbConnect);
     creation_bureau_jpanel.setBureauDAO(burDAO);
@@ -52,12 +53,14 @@ public class Gestion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        image_acceuil2 = new projet.swing.Image_acceuil();
         creation_bureau_jpanel = new projet.swing.Creation_bureau_jpanel();
         recherche_exacte_bureau_jpanel = new projet.swing.Recherche_exacte_bureau_jpanel();
         recherche_partielle_bureau_jpanel = new projet.swing.Recherche_partielle_bureau_jpanel();
         creation_employe_jpanel1 = new projet.swing.Creation_employe_jpanel();
         recherche_exacte_employe_jpanel1 = new projet.swing.Recherche_exacte_employe_jpanel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        Acceuil = new javax.swing.JMenu();
         menuBureau = new javax.swing.JMenu();
         itemCreateBureau = new javax.swing.JMenuItem();
         itemRechEx = new javax.swing.JMenuItem();
@@ -68,11 +71,27 @@ public class Gestion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout image_acceuil2Layout = new javax.swing.GroupLayout(image_acceuil2);
+        image_acceuil2.setLayout(image_acceuil2Layout);
+        image_acceuil2Layout.setHorizontalGroup(
+            image_acceuil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 488, Short.MAX_VALUE)
+        );
+        image_acceuil2Layout.setVerticalGroup(
+            image_acceuil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(image_acceuil2, "card7");
         getContentPane().add(creation_bureau_jpanel, "cardCreateBureau");
         getContentPane().add(recherche_exacte_bureau_jpanel, "cardRechExactBureau");
         getContentPane().add(recherche_partielle_bureau_jpanel, "cardRechPartBureau");
         getContentPane().add(creation_employe_jpanel1, "cardCreateEmploye");
         getContentPane().add(recherche_exacte_employe_jpanel1, "cardRechExactEmploye");
+
+        Acceuil.setText("Acceuil");
+        jMenuBar1.add(Acceuil);
 
         menuBureau.setText("Bureau");
 
@@ -184,9 +203,11 @@ public class Gestion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Acceuil;
     private javax.swing.JMenuItem ItemRechPar;
     private projet.swing.Creation_bureau_jpanel creation_bureau_jpanel;
     private projet.swing.Creation_employe_jpanel creation_employe_jpanel1;
+    private projet.swing.Image_acceuil image_acceuil2;
     private javax.swing.JMenuItem itemCreaEmp;
     private javax.swing.JMenuItem itemCreateBureau;
     private javax.swing.JMenuItem itemRechEmp;

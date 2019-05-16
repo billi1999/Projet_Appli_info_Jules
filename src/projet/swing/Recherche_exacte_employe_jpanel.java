@@ -49,6 +49,7 @@ public class Recherche_exacte_employe_jpanel extends javax.swing.JPanel {
         bt_del = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         idbur_rech = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         sigle_rech_text.setText("matricule :");
 
@@ -101,50 +102,58 @@ public class Recherche_exacte_employe_jpanel extends javax.swing.JPanel {
 
         jLabel1.setText("idbur :");
 
+        jLabel2.setText("Recherche exacte la table employé");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(bt_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bt_maj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(bt_del, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(desc_rech_text)
-                            .addComponent(tel_rech_text)
-                            .addComponent(sigle_rech_text)
-                            .addComponent(idbur_rech_text)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(matricule_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(idemp_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nom_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
+                                .addComponent(bt_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bt_maj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14)
+                                .addComponent(bt_del, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(idbur_rech, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pre_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(desc_rech_text)
+                                    .addComponent(tel_rech_text)
+                                    .addComponent(sigle_rech_text)
+                                    .addComponent(idbur_rech_text)
+                                    .addComponent(jLabel1))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(matricule_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(idemp_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nom_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(idbur_rech, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(pre_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(idbur_rech_text))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(idemp_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -185,7 +194,7 @@ public class Recherche_exacte_employe_jpanel extends javax.swing.JPanel {
             int idbur=Integer.parseInt(idbur_rech.getText());
             Employe emp=new Employe(idemp,matricule,nom,pre,idbur);
             empDAO.update(emp);
-            JOptionPane.showMessageDialog(this,"bureau mis à jour","succès",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,"employé mis à jour","succès",JOptionPane.INFORMATION_MESSAGE);
 
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage(),"ERREUR DANS LA MAJ",JOptionPane.ERROR_MESSAGE);
@@ -202,7 +211,7 @@ public class Recherche_exacte_employe_jpanel extends javax.swing.JPanel {
             pre_rech.setText(emp.getPrenom());
             idbur_rech.setText(""+emp.getIdbur());
             
-            JOptionPane.showConfirmDialog(this,"bureau trouvé","succès",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showConfirmDialog(this,"employé trouvé","succès",JOptionPane.INFORMATION_MESSAGE);
         }catch(Exception e){
             JOptionPane.showMessageDialog(this,e.getMessage(),"ERREUR DANS LA RECHERCHE",JOptionPane.ERROR_MESSAGE);
 
@@ -220,7 +229,7 @@ public class Recherche_exacte_employe_jpanel extends javax.swing.JPanel {
             pre_rech.setText("");
             idbur_rech.setText("");
             
-            JOptionPane.showMessageDialog(this,"bureau effacé","succès",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,"employé effacé","succès",JOptionPane.INFORMATION_MESSAGE);
 
         }catch(Exception e){
             JOptionPane.showMessageDialog(this,e.getMessage(),"ERREUR DANS LA SUPP",JOptionPane.ERROR_MESSAGE);
@@ -238,6 +247,7 @@ public class Recherche_exacte_employe_jpanel extends javax.swing.JPanel {
     private javax.swing.JLabel idbur_rech_text;
     private javax.swing.JTextField idemp_rech;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField matricule_rech;
     private javax.swing.JTextField nom_rech;
     private javax.swing.JTextField pre_rech;

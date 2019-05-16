@@ -16,24 +16,38 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                              <Component id="desc_rech" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <Component id="nom_rech" min="-2" pref="93" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="42" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-              <Component id="desc_rech" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-              <Component id="nom_rech" min="-2" pref="93" max="-2" attributes="0"/>
-              <EmptySpace pref="75" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nom_rech" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="desc_rech" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -75,6 +89,11 @@
     <Component class="javax.swing.JLabel" name="desc_rech">
       <Properties>
         <Property name="text" type="java.lang.String" value="Description :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Recherche partielle dans la table bureau"/>
       </Properties>
     </Component>
   </SubComponents>

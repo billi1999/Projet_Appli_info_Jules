@@ -6,8 +6,14 @@
 package projet.swing;
 
 import Creation_Objet.Bureau;
+import Creation_Objet.Employe;
+import Creation_Objet.VueBureauEmploye;
 import DAO.BureauDAO;
+import DAO.VueBureauEmployeDAO;
+import java.sql.SQLException;
+import java.util.*;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,16 +24,28 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
     /**
      * Creates new form Recherche_exacte_bureau_jpanel
      */
-    BureauDAO burDAO=null;
-    Bureau bur=null;
-    
-   
+    BureauDAO burDAO = null;
+    Bureau bur = null;
+    //VueBureauEmployeDAO vueDAO=null;
+
+    DefaultTableModel dft1 = new DefaultTableModel();
+
     public Recherche_exacte_bureau_jpanel() {
         initComponents();
+        dft1.addColumn("idemp");
+        dft1.addColumn("matricule");
+        dft1.addColumn("nom");
+        dft1.addColumn("prenom");
+        dft1.addColumn("idbur");
+        jTable1.setModel(dft1);
+        
+
     }
-    public void setBureauDAO(BureauDAO burDAO){
-        this.burDAO=burDAO;
+
+    public void setBureauDAO(BureauDAO burDAO) {
+        this.burDAO = burDAO;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,6 +68,7 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
         bt_del = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         sigle_rech_text.setText("Sigle :");
 
@@ -75,6 +94,11 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
 
         desc_rech.setMinimumSize(new java.awt.Dimension(50, 20));
         desc_rech.setPreferredSize(new java.awt.Dimension(150, 30));
+        desc_rech.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desc_rechActionPerformed(evt);
+            }
+        });
 
         bt_maj.setText("Mise à jour");
         bt_maj.setPreferredSize(new java.awt.Dimension(150, 30));
@@ -108,7 +132,7 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "idemp", "matricule", "nom", "prénom", "idbur"
+                "idemp", "matricule", "nom", "prenom", "idbur"
             }
         ) {
             Class[] types = new Class [] {
@@ -120,6 +144,11 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jLabel1.setText("Recherche exacte dans un bureau (entrer un idbur)");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -144,22 +173,22 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
                                     .addComponent(tel_rech_text)
                                     .addComponent(sigle_rech_text)
                                     .addComponent(idbur_rech_text))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(31, 31, 31)
-                                        .addComponent(desc_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(sigle_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(idbur_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tel_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                                    .addComponent(jLabel1)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(sigle_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(idbur_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tel_rech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(desc_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idbur_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idbur_rech_text))
@@ -171,13 +200,13 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tel_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tel_rech_text))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(desc_rech_text)
                     .addComponent(desc_rech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_maj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt_del, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,52 +219,80 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
     }//GEN-LAST:event_idbur_rechActionPerformed
 
     private void bt_majActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_majActionPerformed
-        
-        try{
-            int idbur=Integer.parseInt(idbur_rech.getText());
-            String sigle=sigle_rech.getText();
-            String tel=tel_rech.getText();
-            String desc=desc_rech.getText();
-            Bureau bur=new Bureau(idbur,sigle,tel,desc);
-            burDAO.update(bur);
-            JOptionPane.showMessageDialog(this,"bureau mis à jour","succès",JOptionPane.INFORMATION_MESSAGE);
 
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage(),"ERREUR",JOptionPane.ERROR_MESSAGE);
+        try {
+            int idbur = Integer.parseInt(idbur_rech.getText());
+            String sigle = sigle_rech.getText();
+            String tel = tel_rech.getText();
+            String desc = desc_rech.getText();
+            Bureau bur = new Bureau(idbur, sigle, tel, desc);
+            burDAO.update(bur);
+            JOptionPane.showMessageDialog(this, "bureau mis à jour", "succès", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "ERREUR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bt_majActionPerformed
 
     private void bt_rechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_rechActionPerformed
-       
-        try{
-            int idbur=Integer.parseInt(idbur_rech.getText());
-            bur=burDAO.read(idbur);
+
+        try {
+            int idbur = Integer.parseInt(idbur_rech.getText());
+            bur = burDAO.read(idbur);
             sigle_rech.setText(bur.getSigle());
             tel_rech.setText(bur.getTel());
             desc_rech.setText(bur.getDescription());
-            JOptionPane.showConfirmDialog(this,"bureau trouvé","succès",JOptionPane.INFORMATION_MESSAGE);
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(this,e.getMessage(),"ERREUR",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showConfirmDialog(this, "bureau trouvé", "succès", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "ERREUR", JOptionPane.ERROR_MESSAGE);
+
+        }
+        
+        try{
+            
+            int idbur=Integer.parseInt(idbur_rech.getText());
+            List<VueBureauEmploye> lemp=burDAO.rechEmploye(idbur);
+            int i=dft1.getRowCount();
+            for(int j=i-1;j>=0;j--){
+                dft1.removeRow(j);
+            }
+            for(VueBureauEmploye emp:lemp){
+                Vector v=new Vector();
+                v.add(emp.getIdemp());
+                v.add(emp.getMatricule());
+                v.add(emp.getNom());
+                v.add(emp.getPrenom());
+                v.add(emp.getIdbur());
+                dft1.addRow(v);
+                
+                
+            }
+        } catch (SQLException e) {
+         JOptionPane.showMessageDialog(this,e.getMessage(),"ERREUR",JOptionPane.ERROR_MESSAGE);
 
         }
     }//GEN-LAST:event_bt_rechActionPerformed
 
     private void bt_delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_delActionPerformed
-       
-        try{
-           // int idbur=Integer.parseInt(idbur_rech.getText());
+
+        try {
+            // int idbur=Integer.parseInt(idbur_rech.getText());
             burDAO.delete(bur);
             idbur_rech.setText("");
             sigle_rech.setText("");
             tel_rech.setText("");
             desc_rech.setText("");
-            JOptionPane.showMessageDialog(this,"bureau effacé","succès",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "bureau effacé", "succès", JOptionPane.INFORMATION_MESSAGE);
 
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(this,e.getMessage(),"ERREUR",JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "ERREUR", JOptionPane.ERROR_MESSAGE);
 
         }
     }//GEN-LAST:event_bt_delActionPerformed
+
+    private void desc_rechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desc_rechActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_desc_rechActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -246,6 +303,7 @@ public class Recherche_exacte_bureau_jpanel extends javax.swing.JPanel {
     private javax.swing.JLabel desc_rech_text;
     private javax.swing.JTextField idbur_rech;
     private javax.swing.JLabel idbur_rech_text;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField sigle_rech;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -37,19 +37,15 @@
                                   <Component id="sigle_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="idbur_rech_text" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="desc_rech" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="sigle_rech" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="idbur_rech" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tel_rech" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="sigle_rech" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="idbur_rech" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tel_rech" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="desc_rech" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -62,7 +58,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="idbur_rech" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="idbur_rech_text" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -77,14 +75,14 @@
                   <Component id="tel_rech" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tel_rech_text" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="desc_rech_text" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="desc_rech" alignment="1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="desc_rech_text" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="desc_rech" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
-              <EmptySpace pref="73" max="32767" attributes="0"/>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bt_maj" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt_del" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -157,6 +155,9 @@
           <Dimension value="[150, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="desc_rechActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt_maj">
       <Properties>
@@ -205,7 +206,7 @@
                 <Column editable="true" title="idemp" type="java.lang.Integer"/>
                 <Column editable="true" title="matricule" type="java.lang.String"/>
                 <Column editable="true" title="nom" type="java.lang.String"/>
-                <Column editable="true" title="pr&#xe9;nom" type="java.lang.String"/>
+                <Column editable="true" title="prenom" type="java.lang.String"/>
                 <Column editable="true" title="idbur" type="java.lang.Integer"/>
               </Table>
             </Property>
@@ -226,7 +227,7 @@
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
@@ -245,5 +246,10 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Recherche exacte dans un bureau (entrer un idbur)"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
