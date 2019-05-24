@@ -19,15 +19,14 @@ public class Main {
         Bureau b2=new Bureau(2,"b","b","b");
         Employe e1=new Employe(1,"cl1","cl1","cl1",1);
         Employe e2=new Employe(2,"cl2","cl2","cl2",1);
-        Employe e3=new Employe(3,"cl3","cl3","cl3",2);
-        Employe e4=new Employe(4,"cl4","cl4","cl4",2);
+        //on ajoute le fait que les employés soit mist au courant lors d'un chengement de bureau
         e1.addObserver(b1);
-        e2.addObserver(b1);
+        e2.addObserver(b2);
         
-       
-        e1.setIdbur(2);
+       //on vérifie les observer
+        e1.setIdbur(1);
         e2.setIdbur(2);
-       //b1.addObserver(e1);
+     
     }
     
 }
